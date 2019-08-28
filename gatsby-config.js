@@ -154,7 +154,7 @@ module.exports = {
                     },
                     {
                         resolve: "gatsby-remark-component",
-                        options: {components: ["data-flow-diagram"]}
+                        options: {components: ["data-lifecycle-diagram"]}
                     },
                     {
                         resolve: `gatsby-remark-copy-linked-files`,
