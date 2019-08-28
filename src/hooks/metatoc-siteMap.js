@@ -1,6 +1,6 @@
 import {useStaticQuery, graphql} from 'gatsby';
 
-export const MetadataTOCSiteMap = (metaType, metaProp) => {
+export const metadataTOCSiteMap = (metaType, metaProp) => {
 	const {allMetadataSchemaEntity} = useStaticQuery(
 		graphql`
 		query MetadataTOCSiteMap {

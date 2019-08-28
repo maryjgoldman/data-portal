@@ -1,6 +1,6 @@
 import {useStaticQuery, graphql} from 'gatsby';
 
-export const DraftSiteMap = () => {
+export const draftSiteMap = () => {
 	const {allMarkdownRemark} = useStaticQuery(
 		graphql`
 		query DraftSiteMap {

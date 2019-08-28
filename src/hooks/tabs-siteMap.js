@@ -1,7 +1,7 @@
 import {useStaticQuery, graphql} from 'gatsby';
 import * as NavigationService from '../utils/navigation.service';
 
-export const TabsSiteMap = (docPath) => {
+export const tabsSiteMap = (docPath) => {
 	const {allSiteMapYaml} = useStaticQuery(
 		graphql`
 		query TabsSiteMap {

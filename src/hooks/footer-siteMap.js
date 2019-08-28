@@ -1,7 +1,7 @@
 import {useStaticQuery, graphql} from 'gatsby';
 import * as NavigationService from '../utils/navigation.service';
 
-export const FooterSiteMap = () => {
+export const footerSiteMap = () => {
 	const {allSiteMapYaml} = useStaticQuery(
 		graphql`
 		query FooterSiteMap {

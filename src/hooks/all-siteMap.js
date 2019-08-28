@@ -1,6 +1,6 @@
 import {useStaticQuery, graphql} from 'gatsby';
 
-export const AllSiteMap = () => {
+export const allSiteMap = () => {
 	const {allSiteMapYaml} = useStaticQuery(
 		graphql`
 		query AllSiteMap {

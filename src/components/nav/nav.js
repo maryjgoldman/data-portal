@@ -10,9 +10,9 @@ import Link from 'gatsby-link';
 import React from 'react';
 
 // App dependencies
-import {DraftSiteMap} from '../../hooks/draft-siteMap';
-import {MetadataSiteMap} from '../../hooks/metadata-siteMap';
-import {NavSiteMap} from '../../hooks/nav-siteMap';
+import {draftSiteMap} from '../../hooks/draft-siteMap';
+import {metadataSiteMap} from '../../hooks/metadata-siteMap';
+import {navSiteMap} from '../../hooks/nav-siteMap';
 import * as NavigationService from '../../utils/navigation.service';
 
 // Styles
@@ -118,10 +118,10 @@ export default (props) => {
 
 		let docPath = props.docPath,
 			metaNav = docPath.includes('/metadata/dictionary/'),
-			allPagesSiteMap = NavSiteMap(docPath),
-			documentsInDraftMode = DraftSiteMap(),
+			allPagesSiteMap = navSiteMap(docPath),
+			documentsInDraftMode = draftSiteMap(),
 			pagesSiteMap = NavigationService.getPagesSiteMapByEnvironment(allPagesSiteMap, documentsInDraftMode),
-			metaSiteMap = metaNav ? MetadataSiteMap(docPath) : '';
+			metaSiteMap = metaNav ? metadataSiteMap(docPath) : '';
 
 	const nav = metaNav ? pagesSiteMap.concat(metaSiteMap) : docPath ? pagesSiteMap : '';
 

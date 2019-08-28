@@ -1,7 +1,7 @@
 import {useStaticQuery, graphql} from 'gatsby';
 import * as NavigationService from '../utils/navigation.service';
 
-export const MetadataSiteMap = (docPath) => {
+export const metadataSiteMap = (docPath) => {
 	const {allSitePage} = useStaticQuery(
 		graphql`
 		query MetadataSiteMap {
