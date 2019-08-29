@@ -5,43 +5,87 @@
  * Style definitions specific to the HCA data lifecycle diagram component.
  */
 
-/* Containers - add pointer events */
-.dataLifecycle [id^="container"] {
-    cursor: pointer;
+/* Overflow - visible */
+.dataLifecycle {
+    overflow: visible !important;
+    position: relative;
 }
 
-/* Elements with pointer events "none" */
-.dataLifecycle text, .dataLifecycle [id^="icon/"], .dataLifecycle [id="background"], .dataLifecycle [id="flowPaths"],
-.dataLifecycle [id="containerValidationAndDataCurator"], .dataLifecycle [id="substateGCP"], .dataLifecycle [id="substateAWS"], use {
+/* Active element - pointer events "none" */
+/* Applied to text, icon and any immediate groups e.g. "substateAWS" */
+.dataLifecycle .active text, .dataLifecycle .active g[id^="icon/"], .dataLifecycle .active > g {
     pointer-events: none;
 }
 
-/* "Container" elements - hover state */
-.dataLifecycle rect[id^="container"]:hover {
-    fill: #0C87C6;
-    fill-opacity: 1;
-    opacity: 1;
-    stroke: #0C87C6;
+/* Active element - hide rect, path */
+.dataLifecycle .active > rect, .dataLifecycle path[id^="path"] {
+    opacity: 0;
+    transition: opacity 0.5s ease 0s;
 }
 
-/* Text - hover state */
-/* Includes "AWS" and "GCP" in storage element */
-.dataLifecycle rect[id^="container"]:hover + text, .dataLifecycle rect[id="containerStorage"]:hover ~ g[id^="substate"] text {
+/* Active element - show path */
+.dataLifecycle .active path[id^="path"] {
+    cursor: pointer;
+    opacity: 1;
+    transition: opacity 0.5s ease 0s;
+}
+
+/* Active element - text */
+.dataLifecycle .active text {
     fill: var(--white);
 }
 
-/* Icon hover state */
-.dataLifecycle rect[id^="container"]:hover ~ g[id^="icon/"] {
-    opacity: 1;
+/* Active element - icon */
+.dataLifecycle .active g[id^="icon/"] {
+    display: block;
 }
 
-/* Storage element "AWS" and "GCP" container - hover state */
-.dataLifecycle rect[id="containerStorage"]:hover ~ g[id^="substate"] rect {
+/* Active storage element "AWS" and "GCP" container - hover state */
+.dataLifecycle .active[id="stateStorage"] > g > rect {
     fill: #6DB7DC;
 }
 
-/* Matrix service element - hover state */
-/* Hides <use> for Analysis Portal element */
-.dataLifecycle [id="stateMatrixService"]:hover ~ [id="use"] {
+/* Hover overlay - hide */
+.dataLifecycle rect[id="hoverOverlay"] {
+    height: 0;
+    opacity: 0;
+}
+
+/* Hover overlay - show */
+.dataLifecycle.hover rect[id="hoverOverlay"] {
+    height: 100%;
+    opacity: 1;
+    transition: opacity 0.5s ease 0s;
+}
+
+/* Foreign object - hide */
+.dataLifecycle foreignObject {
     display: none;
+}
+
+/* Foreign object - show */
+.dataLifecycle .active foreignObject {
+    display: block;
+}
+
+/* Card */
+foreignObject > div {
+    background-color: var(--white);
+    border-radius: 0 4px 4px 4px;
+    padding: 15px;
+    width: 212px;
+}
+
+/* Card font <p>, <a> */
+foreignObject p, foreignObject a {
+    font-family: "Montserrat", sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 16px;
+}
+
+/* Card text */
+foreignObject p {
+    color: #404041;
+    margin-bottom: 15px;
 }

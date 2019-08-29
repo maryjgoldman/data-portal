@@ -1,7 +1,7 @@
 <svg width="610px" height="732px" viewBox="0 0 610 732" version="1.1" xmlns="http://www.w3.org/2000/svg">
     <style>
         [id^='icon/'] {
-            opacity: 0;
+            display: none;
         }
         rect[id='containerValidation'] {
             opacity: 0;
@@ -15,6 +15,15 @@
         <polygon id="path-9" points="0 0.541538462 65.4007625 0.541538462 65.4007625 58.0923077 0 58.0923077"></polygon>
         <polygon id="path-11" points="0.000295833333 0.0703015385 67.6425875 0.0703015385 67.6425875 54.1538462 0.000295833333 54.1538462"></polygon>
         <polygon id="path-13" points="0.000394444444 0.0167384615 49.7581806 0.0167384615 49.7581806 55.1384615 0.000394444444 55.1384615"></polygon>
+        <filter x="-2.9%" y="-2.2%" width="105.7%" height="104.5%" filterUnits="objectBoundingBox" id="hoverShadow">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.3 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
     </defs>
     <g id="dataLifecycleDiagram" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
         <g id="background" transform="translate(0.000000, 129.000000)">
@@ -26,6 +35,7 @@
         <path d="M115.3236,511.259356 L115.3236,545.279768 L115.316,545.279 L115.316,569.294 L475.057239,569.294177 C511.893226,569.294177 541.9295,598.989422 542.526542,635.719537 L542.535599,636.834701 L542.535599,642.834301 L550.753964,642.834301 C552.033887,643.416678 552.327761,644.060931 551.635587,644.767061 L551.539712,644.859516 L530.62242,664 L517.921493,664 L497.004201,644.859516 C495.828144,643.78297 496.11963,642.895295 497.63033,642.837313 L497.790948,642.834301 L507.54682,642.834301 L507.54682,636.834701 C507.54682,619.082259 493.262523,604.607279 475.593683,604.319554 L475.057239,604.315189 L393.906263,604.315189 C390.45237,600.329798 384.284348,596.044227 385.011115,596.845707 C389.45569,601.745647 393.266468,607.128877 396.477438,612.971383 C399.194498,620.138856 400.733605,627.880923 400.836519,635.967027 L400.842038,636.834701 L400.842038,642.834301 L409.829156,642.834301 C411.423645,642.834301 411.807482,643.686091 410.731437,644.748849 L410.614904,644.859516 L389.697612,664 L376.996685,664 L356.079393,644.859516 C354.902371,643.78297 355.193824,642.895295 356.704523,642.837313 L356.865141,642.834301 L365.853259,642.834301 L365.853259,636.834701 C365.853259,619.082259 351.567982,604.607279 333.900092,604.319554 L333.363678,604.315189 L252.951465,604.315189 C249.497572,600.329798 243.32955,596.044227 244.056317,596.845707 C248.500892,601.745647 252.31167,607.128877 255.52264,612.971383 C258.2397,620.138856 259.778807,627.880923 259.881721,635.967027 L259.887241,636.834701 L259.887241,642.834301 L268.874359,642.834301 C270.468847,642.834301 270.852684,643.686091 269.776639,644.748849 L269.660107,644.859516 L248.742814,664 L236.041887,664 L215.124595,644.859516 C213.947573,643.78297 214.239026,642.895295 215.749725,642.837313 L215.910343,642.834301 L224.898461,642.834301 L224.898461,636.834701 C224.898461,619.082259 210.613184,604.607279 192.945295,604.319554 L192.40888,604.315189 L115.316,604.315 L115.316531,643.564001 L124.461599,642.271282 C126.056087,642.271282 126.439924,643.123072 125.36388,644.18583 L125.247347,644.296497 L104.330055,663.436981 L91.6291275,663.436981 L70.7118354,644.296497 C69.5357792,643.219951 69.8272646,642.332276 71.3379648,642.274294 L71.4985831,642.271282 L80.3277517,642.271282 L80.3277517,545.271706 L80.334,545.271 L80.3348204,511.259356 L115.3236,511.259356 Z M449.224523,376.178307 L470.141815,395.318791 C471.318838,396.395337 471.02645,397.283012 469.516592,397.340994 L469.356067,397.344006 L460.098036,397.344006 C456.493612,444.591395 417.29063,482.029938 369.353877,482.773984 L367.898603,482.785271 L185.950951,482.785271 L185.950951,447.764259 L367.898603,447.764259 C396.893335,447.764259 420.924472,426.160674 424.812673,398.193431 L424.924316,397.344006 L416.392052,397.344006 C414.797563,397.344006 414.413726,396.492216 415.489771,395.429458 L415.606304,395.318791 L436.523596,376.178307 L449.224523,376.178307 Z M78.3354616,79 L78.3354616,129.030018 L78.3283929,129.030018 L78.3283929,365.412735 L82.3271106,365.412735 L82.3271106,129.030018 L82.3341792,129.030018 L82.3341792,79 L117.322959,79 L117.322959,129.030018 L117.31589,129.030018 L117.31589,365.412735 L120.939,365.412 L120.939514,313.640784 C120.939514,263.115519 161.596705,221.916601 211.885054,221.097675 L213.411859,221.085251 L368.600093,221.085251 C419.587742,221.085251 461.070439,262.605163 461.070439,313.640784 L461.070439,313.640784 L461.070439,315.673004 L426.081659,315.673004 L426.081659,313.640784 C426.081659,281.915749 400.295928,256.106264 368.600093,256.106264 L368.600093,256.106264 L213.411859,256.106264 C181.715024,256.106264 155.928293,281.915749 155.928293,313.640784 L155.928293,313.640784 L155.928293,366.201321 L164.448561,366.201321 C166.098032,366.201321 166.451919,367.112868 165.234309,368.227537 L165.234309,368.227537 L144.317017,387.368021 L131.61609,387.368021 L118.541,375.403 L106.329413,386.578435 L93.6284864,386.578435 L80.485,374.551 L67.3419161,386.578435 L54.6409891,386.578435 L33.723697,367.43795 C32.5476408,366.361404 32.8391262,365.47373 34.3498264,365.415747 L34.5104447,365.412735 L43.3396133,365.412735 L43.3396133,129.030018 L43.346682,129.030018 L43.346682,79 L78.3354616,79 Z" id="flowPaths" fill="#CEE2E9"></path>
         <g id="stateAnalysisPortals" transform="translate(421.000000, 644.000000)">
             <rect id="containerAnalysisPortals" stroke="#BCBEC0" strokeWidth="2" fillRule="nonzero" fill="transparent" x="37" y="19" width="130" height="68" rx="4"></rect>
+            <path id="pathAnalysisPortals" fill="#0C87C6" fillRule="nonzero" stroke="#0C87C6" strokeWidth="2" d="M41,19 L163,19 C165.209139,19 167,20.790861 167,23 L167,87 L167,87 L37,87 L37,23 C37,20.790861 38.790861,19 41,19 Z"></path>
             <text id="textAnalysisPortals" fontFamily="DINAlternate-Bold, DIN Alternate" fontSize="21" fontWeight="bold" linespacing="21" letterSpacing="0.21" fill="#0C87C6">
                 <tspan x="63.5" y="52">Analysis</tspan>
                 <tspan x="69.5779004" y="73">Portals</tspan>
@@ -42,9 +52,16 @@
                     </g>
                 </g>
             </g>
+            <foreignObject width="212" height="255" x="-1" y="87">
+                <div>
+                    <p>From the Data Portal, we link to a large variety of community portals and method and visualization packages enabling you to perform the most up-to-date and diverse types of data analyses. Any HCA community developer can submit their analysis method to be listed on the HCA Data Portal.</p>
+                    <a href="/" target="_blank">Learn More</a>
+                </div>
+            </foreignObject>
         </g>
         <g id="stateMatrixService" transform="translate(317.000000, 644.000000)">
             <rect id="containerMatrixService" stroke="#BCBEC0" strokeWidth="2" fillRule="nonzero" fill="transparent" x="0" y="19" width="130" height="68" rx="4"></rect>
+            <path id="pathMatrixService" fill="#0C87C6" fillRule="nonzero" stroke="#0C87C6" strokeWidth="2" d="M4,19 L126,19 C128.209139,19 130,20.790861 130,23 L130,87 L130,87 L0,87 L0,23 C-2.705415e-16,20.790861 1.790861,19 4,19 Z"></path>
             <text id="textMatrixService" fontFamily="DINAlternate-Bold, DIN Alternate" fontSize="21" fontWeight="bold" linespacing="21" letterSpacing="0.21" fill="#0C87C6">
                 <tspan x="36.2859082" y="52">Matrix</tspan>
                 <tspan x="31.5" y="73">Service</tspan>
@@ -61,10 +78,16 @@
                     </g>
                 </g>
             </g>
+            <foreignObject width="212" height="143" x="-1" y="87">
+                <div>
+                    <p>Lorem ipsum dolor sit amet, con sect etur adipiscing elit, sed do eiusmod tempor se incididunt ut labore et dolore magna ulla aliqua.</p>
+                    <a href="/" target="_blank">Learn More</a>
+                </div>
+            </foreignObject>
         </g>
-        <use id="use" href="#stateAnalysisPortals"/>
         <g id="stateCLIDataAccess" transform="translate(176.000000, 644.000000)">
             <rect id="containerCLIDataAccess" stroke="#BCBEC0" strokeWidth="2" fillRule="nonzero" fill="transparent" x="0" y="19" width="130" height="68" rx="4"></rect>
+            <path id="pathCLIDataAccess" fill="#0C87C6" fillRule="nonzero" stroke="#0C87C6" strokeWidth="2" d="M4,19 L126,19 C128.209139,19 130,20.790861 130,23 L130,87 L130,87 L0,87 L0,23 C-2.705415e-16,20.790861 1.790861,19 4,19 Z"></path>
             <text id="textCLIDataAccess" fontFamily="DINAlternate-Bold, DIN Alternate" fontSize="21" fontWeight="bold" linespacing="21" letterSpacing="0.21" fill="#0C87C6">
                 <tspan x="27" y="52">CLI Data</tspan>
                 <tspan x="33.0906152" y="73">Access</tspan>
@@ -81,9 +104,16 @@
                     </g>
                 </g>
             </g>
+            <foreignObject width="212" height="159" x="-1" y="87">
+                <div>
+                    <p>The CLI (Command Line Interface) enables programmatic interaction with the Data Storage System for downloading data files.</p>
+                    <a href="/" target="_blank">Learn More</a>
+                </div>
+            </foreignObject>
         </g>
         <g id="stateHCADataStorage" transform="translate(35.000000, 644.000000)">
             <rect id="containerHCADataStorage" stroke="#BCBEC0" strokeWidth="2" fillRule="nonzero" fill="transparent" x="0" y="19" width="130" height="68" rx="4"></rect>
+            <path id="pathHCADataStorage" fill="#0C87C6" fillRule="nonzero" stroke="#0C87C6" strokeWidth="2" d="M4,19 L126,19 C128.209139,19 130,20.790861 130,23 L130,87 L130,87 L0,87 L0,23 C-2.705415e-16,20.790861 1.790861,19 4,19 Z"></path>
             <text id="textHCADataStorage" fontFamily="DINAlternate-Bold, DIN Alternate" fontSize="21" fontWeight="bold" linespacing="21" letterSpacing="0.21" fill="#0C87C6">
                 <tspan x="22.5" y="52">HCA Data</tspan>
                 <tspan x="26.6911816" y="73">Browser</tspan>
@@ -100,6 +130,12 @@
                     </g>
                 </g>
             </g>
+            <foreignObject width="212" height="255" x="-1" y="87">
+                <div>
+                    <p>The interactive Data Browser allows you to search, filter, and read about projects to select the data you want. You can then download the list of datasets as a data manifest or download an expression matrix of the data.  The datasets listed in the file manifest can be downloaded using the CLI.</p>
+                    <a href="/" target="_blank">Learn More</a>
+                </div>
+            </foreignObject>
         </g>
         <g id="flowPathRetrievedHCAData" transform="translate(210.000000, 580.000000)">
             <g id="Processed-Data" transform="translate(158.000000, 2.000000)" fill="#E2A44F">
@@ -126,6 +162,7 @@
         </g>
         <g id="statePipelines" transform="translate(358.000000, 297.000000)">
             <rect id="containerPipelines" stroke="#BCBEC0" strokeWidth="2" fillRule="nonzero" fill="transparent" x="0" y="19" width="170" height="60" rx="4"></rect>
+            <path id="pathPipelines" fill="#0C87C6" fillRule="nonzero" stroke="#0C87C6" strokeWidth="2" d="M4,19 L166,19 C168.209139,19 170,20.790861 170,23 L170,79 L170,79 L0,79 L0,23 C-2.705415e-16,20.790861 1.790861,19 4,19 Z"></path>
             <text id="textPipelines" fontFamily="DINAlternate-Bold, DIN Alternate" fontSize="21" fontWeight="bold" linespacing="21" letterSpacing="0.21" fill="#0C87C6">
                 <tspan x="43" y="58.5">Pipelines</tspan>
             </text>
@@ -141,7 +178,12 @@
                     </g>
                 </g>
             </g>
-            <rect id="bounbdsPipelines" fillRule="nonzero" x="0" y="19" width="170" height="60" rx="4"></rect>
+            <foreignObject width="212" height="287" x="-1" y="79">
+                <div>
+                    <p>Data processing pipelines, approved by the HCA Analysis Working Group, process raw data from some single cell assays, producing matrices and QC metrics files. These pipelines identify genes, quantify transcripts, and assess data quality. Like raw data, processed data are put in the Data Storage System for access by the community.</p>
+                    <a href="/" target="_blank">Learn More</a>
+                </div>
+            </foreignObject>
         </g>
         <g id="flowPathReceiveRawData" transform="translate(221.000000, 458.000000)">
             <g id="Symbol/Raw-Data" transform="translate(123.000000, 2.000000)" fill="#0C87C6">
@@ -153,6 +195,7 @@
         </g>
         <g id="stateStorage" transform="translate(15.000000, 365.000000)">
             <rect id="containerStorage" stroke="#BCBEC0" strokeWidth="2" fillRule="nonzero" fill="transparent" x="0" y="22" width="170" height="124" rx="4"></rect>
+            <path id="pathStorage" fill="#0C87C6" fillRule="nonzero" stroke="#0C87C6" strokeWidth="2" d="M4,22 L166,22 C168.209139,22 170,23.790861 170,26 L170,147 L170,147 L0,147 L0,26 C-2.705415e-16,23.790861 1.790861,22 4,22 Z"></path>
             <text id="textStorage" fontFamily="DINAlternate-Bold, DIN Alternate" fontSize="21" fontWeight="bold" linespacing="21" letterSpacing="0.21" fill="#0C87C6">
                 <tspan x="50" y="55.5">Storage</tspan>
             </text>
@@ -180,21 +223,28 @@
                     </g>
                 </g>
             </g>
+            <foreignObject width="212" height="223" x="-1" y="147">
+                <div>
+                    <p>Validated raw data and metadata files are submitted to the Data Storage System. Storage is provided in both Amazon Web Services (AWS) and Google Cloud Platform (GCP) environments, and data can be accessed from either.</p>
+                    <a href="/" target="_blank">Learn More</a>
+                </div>
+            </foreignObject>
         </g>
-        <g id="stateValidation" transform="translate(15.000000, 152.000000)">
-            <g id="containerValidation" fillRule="nonzero" stroke="#BCBEC0" strokeWidth="2">
-                <path d="M29,1 L101.65,1" id="Line" strokeDasharray="2,3"></path>
-                <path d="M170,74.3 L170,112" id="Line-Copy-2" strokeDasharray="2,3"></path>
-                <path d="M29.3,201 L141,201" id="Line-Copy" strokeDasharray="2,3"></path>
-                <path d="M-1.8189894e-12,1 L23,1 C25.209139,1 27,2.790861 27,5 L27,197 C27,199.209139 25.209139,201 23,201 L-1.8189894e-12,201 L-1.8189894e-12,201" id="Container" transform="translate(13.500000, 101.000000) scale(-1, 1) translate(-13.500000, -101.000000) "></path>
-                <path d="M143,114 L166,114 C168.209139,114 170,115.790861 170,118 L170,201 L170,201" id="Bottpm-Right" transform="translate(156.500000, 157.500000) scale(1, -1) translate(-156.500000, -157.500000) "></path>
-                <path d="M104,1 L166,1 C168.209139,1 170,2.790861 170,5 L170,71.8237305 L170,71.8237305" id="Top-Right"></path>
-            </g>
-            <rect id="containerValidation" stroke="#BCBEC0" strokeWidth="2" fillRule="nonzero" fill="transparent" x="0" y="141" width="170" height="60" rx="4"></rect>
+        <g id="boundsValidation" transform="translate(15.000000, 152.000000)" fillRule="nonzero" stroke="#BCBEC0" strokeWidth="2">
+            <path d="M29,1 L101.65,1" id="Line" strokeDasharray="2,3"></path>
+            <path d="M170,74.3 L170,112" id="Line-Copy-2" strokeDasharray="2,3"></path>
+            <path d="M29.3,201 L141,201" id="Line-Copy" strokeDasharray="2,3"></path>
+            <path d="M-1.8189894e-12,1 L23,1 C25.209139,1 27,2.790861 27,5 L27,197 C27,199.209139 25.209139,201 23,201 L-1.8189894e-12,201 L-1.8189894e-12,201" id="Container" transform="translate(13.500000, 101.000000) scale(-1, 1) translate(-13.500000, -101.000000)"></path>
+            <path d="M143,114 L166,114 C168.209139,114 170,115.790861 170,118 L170,201 L170,201" id="Bottpm-Right" transform="translate(156.500000, 157.500000) scale(1, -1) translate(-156.500000, -157.500000) "></path>
+            <path d="M104,1 L166,1 C168.209139,1 170,2.790861 170,5 L170,71.8237305 L170,71.8237305" id="Top-Right"></path>
+        </g>
+        <g id="stateValidation" transform="translate(15.000000, 274.000000)">
+            <rect id="containerValidation" stroke="#BCBEC0" strokeWidth="2" fillRule="nonzero" fill="transparent" x="0" y="19" width="170" height="60" rx="4"></rect>
+            <path id="pathValidation" fill="#0C87C6" fillRule="nonzero" stroke="#0C87C6" strokeWidth="2" d="M4,19 L166,19 C168.209139,19 170,20.790861 170,23 L170,79 L170,79 L0,79 L0,23 C-2.705415e-16,20.790861 1.790861,19 4,19 Z"></path>
             <text id="textValidation" fontFamily="DINAlternate-Bold, DIN Alternate" fontSize="21" fontWeight="bold" linespacing="21" letterSpacing="0.21" fill="#0C87C6">
-                <tspan x="41" y="181">Validation</tspan>
+                <tspan x="41" y="59">Validation</tspan>
             </text>
-            <g id="icon/validation" transform="translate(156.000000, 122.000000)">
+            <g id="icon/validation" transform="translate(156.000000, 0.000000)">
                 <g id="Group-20" transform="translate(0.000000, 6.892308)">
                     <polygon id="Fill-1" fill="#FFFFFF" points="39.4887208 16.4202338 25.0086653 1.96903385 25.0086653 5.96657231 25.0086653 10.8039877 25.0086653 16.4202338"></polygon>
                     <g id="Group-19" transform="translate(0.000000, 0.968271)">
@@ -215,12 +265,25 @@
                     </g>
                 </g>
             </g>
-            <g id="substateDataCurator" transform="translate(12.000000, 17.000000)">
-                <rect id="containerDataCurator" fillOpacity="0.5" fill="#FFFFFF" fillRule="nonzero" x="0" y="0" width="110" height="30" rx="3"></rect>
-                <text id="textDataCurator" fontFamily="Montserrat-SemiBold, Montserrat SemiBold" fontSize="14" fontWeight="500" fill="#717272">
-                    <tspan x="8.352" y="20">Data Curator</tspan>
-                </text>
-            </g>
+            <foreignObject width="212" height="143" x="-1" y="79">
+                <div>
+                    <p>Lorem ipsum dolor sit amet, con sect etur adipiscing elit, sed do eiusmod tempor se incididunt ut labore et dolore magna ulla aliqua.</p>
+                    <a href="/contribute/contributing-data-suitability" target="_blank">Learn More</a>
+                </div>
+            </foreignObject>
+        </g>
+        <g id="stateDataCurator" transform="translate(27.000000, 169.000000)">
+            <rect id="containerDataCurator" fillOpacity="0.5" fill="#FFFFFF" fill-rule="nonzero" x="0" y="0" width="110" height="30" rx="3"></rect>
+            <path id="pathDataCurator" fill="#0C87C6" fillRule="nonzero" stroke="#0C87C6" strokeWidth="2" d="M3,0 L107,0 C108.656854,-3.04359188e-16 110,1.34314575 110,3 L110,30 L110,30 L0,30 L0,3 C-2.02906125e-16,1.34314575 1.34314575,3.04359188e-16 3,0 Z"></path>
+            <text id="textDataCurator" fontFamily="Montserrat-SemiBold, Montserrat SemiBold" fontSize="14" fontWeight="500" fill="#717272">
+                <tspan x="8.352" y="20">Data Curator</tspan>
+            </text>
+            <foreignObject width="212" height="223" x="-1" y="30">
+                <div>
+                    <p>Submitters work with a Data Curator to upload the data and metadata and ensure it is well formatted and conforms to file format standards. Metadata is also validated as conforming to HCA metadata standards; errors are identified and corrected for re-uploading.</p>
+                    <a href="/contribute/contributing-data-suitability" target="_blank">Learn More</a>
+                </div>
+            </foreignObject>
         </g>
         <g id="flowPathSubmitData" transform="translate(44.000000, 98.000000)">
             <g id="Symbol/Raw-Data" transform="translate(51.000000, 26.000000)" fill="#0C87C6">
@@ -235,6 +298,7 @@
         </g>
         <g id="stateResearchData" transform="translate(15.000000, 0.000000)">
             <rect id="containerResearchData" stroke="#BCBEC0" strokeWidth="2" fillRule="nonzero" fill="transparent" x="0" y="19" width="170" height="60" rx="4"></rect>
+            <path id="pathResearchData" fill="#0C87C6" fillRule="nonzero" stroke="#0C87C6" strokeWidth="2"  d="M4,19 L166,19 C168.209139,19 170,20.790861 170,23 L170,79 L170,79 L0,79 L0,23 C-2.705415e-16,20.790861 1.790861,19 4,19 Z"></path>
             <text id="textResearchData" fontFamily="DINAlternate-Bold, DIN Alternate" fontSize="21" fontWeight="bold" linespacing="21" letterSpacing="0.21" fill="#0C87C6">
                 <tspan x="19.5" y="58.5">Research Data</tspan>
             </text>
@@ -244,6 +308,13 @@
                     <path d="M67.6526458,33.5081354 C67.3252569,36.7553969 64.4517292,39.1549046 61.1403681,38.8280123 C59.5586458,38.6704738 58.1327292,37.9073969 57.1268958,36.6785969 C56.1210625,35.4507815 55.6546319,33.9039508 55.8133958,32.3246277 C56.1171181,29.2762585 58.6583264,26.9771815 61.7231597,26.9771815 C61.9213681,26.9771815 62.1225347,26.9870277 62.3246875,27.0077046 C65.5877292,27.3336123 67.9780625,30.2500431 67.6526458,33.5081354 L67.6526458,33.5081354 Z M28.5622153,42.9269662 C28.5622153,42.7733662 28.6667431,42.6473354 28.8067708,42.6030277 L29.0118819,43.2509046 C28.9783542,43.2607508 28.9458125,43.2715815 28.9093264,43.2715815 C28.7180208,43.2715815 28.5622153,43.1169969 28.5622153,42.9269662 L28.5622153,42.9269662 Z M62.5209236,25.04832 C58.1041319,24.6121354 54.2819653,27.8081969 53.8510347,32.1296738 C53.7869375,32.7637662 53.8076458,33.3929354 53.8934375,34.0093046 L30.6034653,41.3604431 C30.1794375,40.9045662 29.5798819,40.6141046 28.9093264,40.6141046 C27.6303403,40.6141046 26.5899931,41.6518892 26.5899931,42.9269662 C26.5899931,44.2030277 27.6303403,45.2408123 28.9093264,45.2408123 C30.0798403,45.2408123 31.0412986,44.3654892 31.1951319,43.2381046 L54.3983264,35.9135508 C54.6921875,36.6313354 55.0955069,37.3077662 55.6003958,37.92512 C56.9395347,39.5605662 58.8377986,40.5776738 60.9431458,40.7883815 C61.2113681,40.8149662 61.4766319,40.8277662 61.7399236,40.8277662 L61.7409097,40.8277662 C65.8214375,40.8277662 69.2057708,37.7656123 69.6150069,33.7030892 C70.0479097,29.3648738 66.8657292,25.4825354 62.5209236,25.04832 L62.5209236,25.04832 Z M41.9417708,7.31539692 C42.2464792,4.26702769 44.7886736,1.96893538 47.8535069,1.96893538 C48.0517153,1.96893538 48.2528819,1.97878154 48.4550347,1.99945846 C50.0367569,2.15699692 51.4626736,2.92007385 52.4685069,4.14887385 C53.4733542,5.37570462 53.9387986,6.92056615 53.7800347,8.49988923 C53.4565903,11.7461662 50.5870069,14.1525662 47.2697292,13.8177969 C44.0066875,13.4909046 41.6163542,10.5744738 41.9417708,7.31539692 L41.9417708,7.31539692 Z M32.4228403,37.5430892 C32.5628681,37.6110277 32.7097986,37.6425354 32.8547569,37.6425354 C33.2206042,37.6425354 33.5706736,37.4397046 33.7412708,37.0901662 L44.4386042,15.2110277 C44.4642431,15.1588431 44.4652292,15.1037046 44.4800208,15.0495508 C45.2777847,15.4276431 46.1465486,15.6846277 47.0734931,15.7781662 C47.3407292,15.8047508 47.6069792,15.8175508 47.8702708,15.8175508 C51.9537569,15.8175508 55.3380903,12.7553969 55.7423958,8.69582769 C55.9544097,6.59465846 55.3341458,4.53681231 53.9950069,2.90235077 C52.6558681,1.26592 50.7576042,0.249796923 48.6502847,0.0390892308 C44.2354653,-0.394141538 40.4123125,2.79896615 39.9794097,7.11945846 C39.7052708,9.86850462 40.8846597,12.4324431 42.8894236,14.0550892 C42.8006736,14.1358277 42.7227708,14.23232 42.6665625,14.34752 L31.9692292,36.2266585 C31.7305903,36.7150277 31.9337292,37.3038277 32.4228403,37.5430892 L32.4228403,37.5430892 Z M29.3767431,50.9830892 L17.1006458,50.9830892 C8.75913194,50.9830892 1.97271528,44.2049969 1.97271528,35.8731815 C1.97271528,31.4945969 3.84139583,27.4389662 7.10246528,24.5668431 L8.83013194,26.9456738 C7.94361806,27.6614892 7.1310625,28.5643815 6.78395139,28.9710277 C5.16179861,31.1293046 4.30486806,33.6420431 4.30486806,36.2384738 C4.30486806,43.2430277 10.7767153,48.52352 19.3598264,48.52352 L29.7051181,48.52352 L29.3767431,50.9830892 Z M7.69314583,60.4216123 L11.2204653,53.0369969 L23.9245347,53.0369969 L27.4508681,60.4216123 L7.69314583,60.4216123 Z M6.32738194,15.8973046 L11.2855486,12.3073969 C11.2865347,12.3064123 11.2875208,12.3044431 11.2894931,12.3034585 L13.1453542,10.9594585 L27.5337014,30.7718892 L25.6729097,32.1198277 C25.6719236,32.1198277 25.6709375,32.1198277 25.6699514,32.1208123 L22.7806458,34.2141046 L18.6942014,37.1738585 L4.30486806,17.3614277 L6.32738194,15.8973046 Z M3.17379861,10.2170585 L6.69717361,7.66690462 L9.32910417,11.2912738 L5.80671528,13.8414277 L3.17379861,10.2170585 Z M26.7694653,35.3080123 L23.2490486,37.8581662 L22.5114375,36.8430277 L25.2370486,34.8678892 L26.0308681,34.2928738 L26.7694653,35.3080123 Z M31.5737986,46.8900431 C31.3864375,46.6763815 31.1152569,46.5542892 30.8312569,46.5542892 L19.3598264,46.5542892 C11.7786042,46.5542892 6.27709028,42.2160738 6.27709028,36.2384738 C6.27709028,34.0713354 6.9979375,31.9681969 8.32129861,30.2037662 C8.85478472,29.5824738 9.47110417,28.9769354 9.9888125,28.5417354 L17.6755486,39.1263508 C17.8293819,39.3380431 18.0601319,39.4798277 18.3194792,39.5201969 C18.3707569,39.5290585 18.4230208,39.5329969 18.4742986,39.5329969 C18.6803958,39.5329969 18.8835347,39.4689969 19.0531458,39.34592 L20.9139375,37.9979815 L22.2303958,39.8106585 C22.3842292,40.0223508 22.6159653,40.16512 22.8743264,40.2054892 C22.9256042,40.2143508 22.9778681,40.2173046 23.0291458,40.2173046 C23.2362292,40.2173046 23.4393681,40.1533046 23.6079931,40.0302277 L28.7249236,36.3241354 C28.9369375,36.1705354 29.0789375,35.9401354 29.1203542,35.6821662 C29.1617708,35.4241969 29.0986597,35.16032 28.9448264,34.9486277 L27.6273819,33.1369354 L29.4901458,31.7880123 C29.9309375,31.4689969 30.0295486,30.8526277 29.7090625,30.4125046 L14.1630208,9.00696615 C14.0091875,8.79527385 13.7784375,8.65348923 13.5190903,8.61213538 C13.2607292,8.57078154 12.9974375,8.63379692 12.7854236,8.78739692 L10.9256181,10.1343508 L7.71484028,5.71441231 C7.39435417,5.27428923 6.77803472,5.17582769 6.33724306,5.49484308 L1.21834028,9.20093538 C1.00632639,9.35453538 0.864326389,9.58493538 0.822909722,9.84290462 C0.781493056,10.1008738 0.844604167,10.3647508 0.9984375,10.5754585 L4.21020139,14.9973662 L2.34842361,16.3453046 C1.90763194,16.66432 1.80902083,17.2806892 2.12950694,17.7198277 L5.92603472,22.9481354 C2.14824306,26.20032 0.000493055556,30.8585354 0.000493055556,35.8731815 C0.000493055556,42.7261046 4.07115972,48.6328123 9.91682639,51.3503508 C9.83399306,51.4310892 9.76003472,51.5206892 9.70875694,51.6280123 L5.23970139,60.9818585 C5.09474306,61.2870892 5.1164375,61.6454892 5.29689583,61.9310277 C5.47735417,62.2175508 5.79192361,62.3908431 6.13015972,62.3908431 L29.0128681,62.3908431 C29.3520903,62.3908431 29.6666597,62.2175508 29.8471181,61.9310277 C30.0275764,61.6454892 30.0492708,61.2880738 29.9033264,60.9818585 L26.0693264,52.95232 L30.2405764,52.95232 C30.7346181,52.95232 31.1517431,52.5870277 31.2178125,52.0976738 L31.8084931,47.6688738 C31.8459653,47.3882585 31.7611597,47.1046892 31.5737986,46.8900431 L31.5737986,46.8900431 Z" id="Fill-3" fill="#0C87C6"></path>
                 </g>
             </g>
+            <foreignObject width="212" height="111" x="-1" y="79">
+                <div>
+                    <p>Labs submit their single cell data and associated metadata.</p>
+                    <a href="/" target="_blank">Learn More</a>
+                </div>
+            </foreignObject>
         </g>
+        <rect id="hoverOverlay" fillOpacity="0.6" fill="#FFFFFF" fill-rule="nonzero" x="0" y="0" width="610" height="732"></rect>
     </g>
 </svg>
