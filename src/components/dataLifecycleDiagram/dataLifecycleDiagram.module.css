@@ -5,87 +5,119 @@
  * Style definitions specific to the HCA data lifecycle diagram component.
  */
 
-/* Overflow - visible */
 .dataLifecycle {
-    overflow: visible !important;
-    position: relative;
-}
-
-/* Active element - pointer events "none" */
-/* Applied to text, icon and any immediate groups e.g. "substateAWS" */
-.dataLifecycle .active text, .dataLifecycle .active g[id^="icon/"], .dataLifecycle .active > g {
-    pointer-events: none;
-}
-
-/* Active element - hide rect, path */
-.dataLifecycle .active > rect, .dataLifecycle path[id^="path"] {
-    opacity: 0;
-    transition: opacity 0.5s ease 0s;
-}
-
-/* Active element - show path */
-.dataLifecycle .active path[id^="path"] {
-    cursor: pointer;
-    opacity: 1;
-    transition: opacity 0.5s ease 0s;
-}
-
-/* Active element - text */
-.dataLifecycle .active text {
-    fill: var(--white);
-}
-
-/* Active element - icon */
-.dataLifecycle .active g[id^="icon/"] {
-    display: block;
-}
-
-/* Active storage element "AWS" and "GCP" container - hover state */
-.dataLifecycle .active[id="stateStorage"] > g > rect {
-    fill: #6DB7DC;
-}
-
-/* Hover overlay - hide */
-.dataLifecycle rect[id="hoverOverlay"] {
-    height: 0;
-    opacity: 0;
-}
-
-/* Hover overlay - show */
-.dataLifecycle.hover rect[id="hoverOverlay"] {
-    height: 100%;
-    opacity: 1;
-    transition: opacity 0.5s ease 0s;
-}
-
-/* Foreign object - hide */
-.dataLifecycle foreignObject {
     display: none;
 }
 
-/* Foreign object - show */
-.dataLifecycle .active foreignObject {
-    display: block;
-}
+/**
+ * HCA data lifecycle diagram component specific breakpoint
+ */
+@media screen and (min-width: 818px) {
 
-/* Card */
-foreignObject > div {
-    background-color: var(--white);
-    border-radius: 0 4px 4px 4px;
-    padding: 15px;
-    width: 212px;
-}
+    /* Overflow - visible */
+    .dataLifecycle {
+        display: block;
+        overflow: visible !important;
+        position: relative;
+    }
 
-/* Card font <p>, <a> */
-foreignObject p, foreignObject a {
-    font-family: "Montserrat", sans-serif;
-    font-size: 13px;
-    font-weight: 300;
-    line-height: 16px;
-}
+    /* Pointer events "none" */
+    /* Default state - foreignObject, rect "bounds", hover overlay */
+    /* Active state - text, icon, any immediate groups e.g. "substateAWS" */
+    .dataLifecycle foreignObject, .dataLifecycle rect[id^="bounds"], .dataLifecycle rect[id="hoverOverlay"], .dataLifecycle .active text, .dataLifecycle g[id^="icon/"], .dataLifecycle .active > g {
+        pointer-events: none;
+    }
 
-/* Card text */
-foreignObject p {
-    color: #404041;
-    margin-bottom: 15px;
+    /* Pointer events "all" */
+    /* Active state - foreignObject, rect "bounds" */
+    .dataLifecycle .active foreignObject, .dataLifecycle .active rect[id^="bounds"] {
+        pointer-events: all;
+    }
+
+    /* Hide */
+    /* Default state hide - icon, path, foreignObject, hover overlay */
+    /* Active state hide - rect "container" */
+    .dataLifecycle g[id^="icon/"], .dataLifecycle path[id^="path"], .dataLifecycle foreignObject, .dataLifecycle rect[id="hoverOverlay"], .dataLifecycle .active > rect[id^="container"] {
+        -webkit-animation: hideElement 0.5s ease 0s; /* Safari 4+ */
+        -moz-animation: hideElement 0.5s ease 0s; /* Fx 5+ */
+        -o-animation: hideElement 0.5s ease 0s; /* Opera 12+ */
+        animation: hideElement 0.5s ease 0s; /* IE 10+, Fx 29+ */
+        opacity: 0;
+    }
+
+    /* Default state hide - containerValidation */
+    .dataLifecycle rect[id='containerValidation'] {
+        opacity: 0;
+    }
+
+    /* Show */
+    /* Active state show - icon, path, foreignObject, hover overlay */
+    .dataLifecycle .active g[id^="icon/"], .dataLifecycle .active path[id^="path"], .dataLifecycle .active foreignObject, .dataLifecycle.hover rect[id="hoverOverlay"] {
+        -webkit-animation: revealElement 0.5s ease 0s; /* Safari 4+ */
+        -moz-animation: revealElement 0.5s ease 0s; /* Fx 5+ */
+        -o-animation: revealElement 0.5s ease 0s; /* Opera 12+ */
+        animation: revealElement 0.5s ease 0s; /* IE 10+, Fx 29+ */
+        opacity: 1;
+    }
+
+    /* Active state - path */
+    .dataLifecycle .active path[id^="path"] {
+        cursor: pointer;
+    }
+
+    /* Active state - text */
+    .dataLifecycle .active text {
+        fill: var(--white);
+    }
+
+    /* Active state - storage element "AWS" and "GCP" container */
+    .dataLifecycle .active[id="stateStorage"] > g > rect {
+        fill: #6DB7DC;
+    }
+
+    /* Card */
+    .dataLifecycle foreignObject > div {
+        background-color: var(--white);
+        border-radius: 0 4px 4px 4px;
+        padding: 15px;
+        width: 212px;
+    }
+
+    .dataLifecycle .active[id="stateAnalysisPortals"] foreignObject > div {
+        border-radius: 4px 0 4px 4px;
+    }
+
+    /* Card font <p>, <a> */
+    .dataLifecycle foreignObject p, .dataLifecycle foreignObject a {
+        font-family: "Montserrat", sans-serif;
+        font-size: 13px;
+        font-weight: 300;
+        line-height: 16px;
+    }
+
+    /* Card text */
+    .dataLifecycle foreignObject p {
+        color: #404041;
+        margin-bottom: 15px;
+    }
+
+    /* Animation - show */
+    @keyframes revealElement {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    /* Animation - hide */
+    @keyframes hideElement {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
 }
