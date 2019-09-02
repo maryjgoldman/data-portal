@@ -9,6 +9,10 @@
     display: none;
 }
 
+.dataLifecycle .dataLifecycleCard {
+    position: absolute;
+}
+
 /**
  * HCA data lifecycle diagram component specific breakpoint
  */
@@ -17,6 +21,10 @@
     /* Overflow - visible */
     .dataLifecycle {
         display: block;
+        position: relative;
+    }
+
+    .dataLifecycle svg {
         overflow: visible !important;
         position: relative;
     }
@@ -76,11 +84,27 @@
     }
 
     /* Card */
-    .dataLifecycle foreignObject > div {
+    .dataLifecycle foreignObject > div, .dataLifecycleCard {
         background-color: var(--white);
         border-radius: 0 4px 4px 4px;
         padding: 15px;
         width: 212px;
+    }
+
+    .dataLifecycle.hover .dataLifecycleCard {
+        -webkit-animation: revealElement 0.5s ease 0s; /* Safari 4+ */
+        -moz-animation: revealElement 0.5s ease 0s; /* Fx 5+ */
+        -o-animation: revealElement 0.5s ease 0s; /* Opera 12+ */
+        animation: revealElement 0.5s ease 0s; /* IE 10+, Fx 29+ */
+        opacity: 1;
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    .dataLifecycleCard {
+        box-shadow: 0 0 3px 0 rgba(0,0,0,0.30);
+        opacity: 1;
+        position: absolute;
     }
 
     .dataLifecycle .active[id="stateAnalysisPortals"] foreignObject > div {
@@ -88,7 +112,7 @@
     }
 
     /* Card font <p>, <a> */
-    .dataLifecycle foreignObject p, .dataLifecycle foreignObject a {
+    .dataLifecycle foreignObject p, .dataLifecycle foreignObject a, .dataLifecycleCard p, .dataLifecycleCard a {
         font-family: "Montserrat", sans-serif;
         font-size: 13px;
         font-weight: 300;
@@ -96,7 +120,7 @@
     }
 
     /* Card text */
-    .dataLifecycle foreignObject p {
+    .dataLifecycle foreignObject p, .dataLifecycleCard p {
         color: #404041;
         margin-bottom: 15px;
     }
